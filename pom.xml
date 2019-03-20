@@ -15,51 +15,63 @@
 	<description>科贸软件一班的微信项目</description>
 
 	<properties>
+		<!-- 基于Spring Boot项目可以使用java.version来指定JDK的版本号，可选的：1.8、9、10、11 -->
+		<!-- 11是目前最新的稳定版，下一个稳定版2年后发布 -->
 		<java.version>11</java.version>
+		<!-- 源代码的字符编码 -->
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<!-- 报告文件的字符编码 -->
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 	</properties>
- 	
- 	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-	 <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
 	<dependencies>
+		<!-- 自动配置Spring Data JPA，使用Hibernate实现 -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
+		<!-- 自动配置Redis，使用Lettuce驱动 -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-redis</artifactId>
 		</dependency>
+		<!-- 自动配置Spring MVC -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-
+		<!-- 数据库驱动 -->
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 			<scope>runtime</scope>
 		</dependency>
-		
+		<!-- Spring Boot的测试支持 -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-		<dependency> 
-		<groupId>junit</groupId>
-		<artifactId>junit</artifactId>
-		<scope>test</scope>
+		<!-- 单元测试框架 -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<!-- <version>4.12</version> -->
+			<scope>test</scope>
 		</dependency>
-		<dependency>  
 
-            <groupId>org.springframework.boot</groupId>  
-            <artifactId>spring-boot-devtools</artifactId> 
+		<!-- 开发者工具，用于实现热部署（修改文件以后马上生效） -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<!-- scope必须是runtime才能生效 -->
 			<scope>runtime</scope>
-		</dependency> 
+		</dependency>
 	</dependencies>
 
 	<build>
 		<plugins>
+			<!-- Spring Boot的Maven插件，用于在打包的时候把所有相关jar文件打包在一起 -->
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
