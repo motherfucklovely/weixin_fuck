@@ -33,7 +33,7 @@ public class MessageReceiverControll {
 			@RequestBody String xml) {
 			//收到消息
 		LOG.trace("收到的消息原文:\n{}\n--------------",xml);
-		
+			//接受消息
 		
 		return null;
 		
