@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/kemao_1/wexin/receiver")
+@RequestMapping("/kemao_1/message/receiver")
 public class MessageReceiverControll {
 	private static final Logger LOG =LoggerFactory.getLogger(MessageReceiverControll.class);
 	@GetMapping
